@@ -88,7 +88,8 @@ function extractNameFromTemplate(value) {
  *   'cat'       => 'c'
  */
 function getFirstChar(value) {
-    throw new Error('Not implemented');
+    // throw new Error('Not implemented');
+    return value.slice(0, 1);
 }
 
 /**
@@ -118,7 +119,10 @@ function removeLeadingAndTrailingWhitespaces(value) {
  *   'cat', 3 => 'catcatcat'
  */
 function repeatString(value, count) {
-    throw new Error('Not implemented');
+    // throw new Error('Not implemented');
+    let result = '';
+    for (let i=0; i<count; i++) { result += value}
+    return result;
 }
 
 /**
