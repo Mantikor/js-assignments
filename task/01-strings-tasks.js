@@ -104,7 +104,8 @@ function getFirstChar(value) {
  *   '\tHello, World! ' => 'Hello, World!'
  */
 function removeLeadingAndTrailingWhitespaces(value) {
-    throw new Error('Not implemented');
+    // throw new Error('Not implemented');
+    return value.trim();
 }
 
 /**
@@ -233,7 +234,20 @@ function getRectangleString(width, height) {
  *
  */
 function encodeToRot13(str) {
-    throw new Error('Not implemented');
+    // throw new Error('Not implemented');
+    let norm = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+    let rot13 = 'NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm';
+    let rot13_str = '';
+    for (let i=0; i<str.length; i++) {
+        for (let j=0; j<norm.length; j++) {
+            if (str[i] === norm[j]) {
+                rot13_str += rot13[j];
+                break;
+            }
+            if (j === norm.length-1) rot13_str += str[i];
+        }
+    }
+    return rot13_str;
 }
 
 /**
